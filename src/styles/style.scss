@@ -1,0 +1,17 @@
+html,
+body {
+    height: 100%;
+}
+
+a {
+    font-weight: var(--link-font-weight);
+    font-size: var(--link-font-size);
+    line-height: var(--link-line-height);
+    color: var(--link-color);
+    font-family: var(--link-font);
+    text-decoration: none;
+
+    &.green {
+        color: var(--color-green);
+    }
+}

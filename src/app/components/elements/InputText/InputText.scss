@@ -1,0 +1,56 @@
+
+.inputText{
+    --input-font-weight: normal;
+    --input-font-size: 16px;
+    --input-line-height: 20px;
+    --input-color: #000000;
+    --input-font: Muli;
+    --input-padding: 11px 20px;
+    --input-border: 2px solid #00000029;
+    --input-border-error: 2px solid #ff0000;
+
+    --label-font-weight: normal;
+    --label-font-size: 14px;
+    --label-line-height: 18px;
+    --label-color: #707070;
+    --label-color-error: #ff0000;
+    --label-font: Muli;
+
+    --margin-bottom: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+    margin-bottom: var(--margin-bottom);
+
+    label {
+        font-weight: var(--label-font-weight);
+        font-size: var(--label-font-size);
+        line-height: var(--label-line-height);
+        color: var(--label-color);
+        font-family: var(--label-font);
+    }
+
+    input {
+        font-weight: var(--input-font-weigh);
+        font-size: var(--input-font-size);
+        line-height: var(--input-line-height);
+        color: var(--input-color);
+        font-family: var(--input-font);
+        padding: var(--input-padding);
+        border: none;
+        border-bottom: var(--input-border);
+        outline: none;
+    }
+
+    &.error {
+        label {
+            color: var(--label-color-error);
+        }
+        input {
+            border-bottom: var(--input-border-error);
+        }
+    }
+
+
+}

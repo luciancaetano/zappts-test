@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/app';
 import reportWebVitals from './reportWebVitals';
+import 'reset-css';
+import 'css-font-family/css/css-font-family.min.css';
+import 'typeface-muli';
+import 'fontsource-metropolis';
+import './styles/style.scss';
 import './styles/vars.scss';
 
 ReactDOM.render(

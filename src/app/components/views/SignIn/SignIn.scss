@@ -1,0 +1,102 @@
+#signIn {
+    display: flex;
+
+    .side {
+        display   : flex;
+        width     : 50%;
+        box-sizing: border-box;
+
+        &.sliderContainer {
+            flex-direction: column;
+
+            @media only screen and (min-device-width : 320px) and (max-device-width : 1023px) {
+                display: none;
+            }
+
+            @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+                display: none;
+            }
+        }
+
+        @media only screen and (min-device-width : 320px) and (max-device-width : 1023px) {
+            width: 100vw;
+        }
+
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+            width: 100vw;
+        }
+
+        &.form {
+            display       : flex;
+            padding       : var(--form-padding);
+            box-sizing    : border-box;
+            flex-direction: column;
+            overflow-y    : auto;
+
+            @media only screen and (min-device-width : 320px) and (max-device-width : 1023px) {
+                padding: var(--form-padding-mobile);
+            }
+
+
+            .form__logo {
+                display        : flex;
+                justify-content: flex-end;
+                margin-bottom  : var(--form-logo-margin-bottom);
+            }
+
+            .form__content {
+
+                @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+                    padding: var(--form-padding);
+                }
+
+                h1 {
+                    font-family  : var(--page-title-font);
+                    font-weight  : var(--page-title-font-weight);
+                    font-size    : var(--page-title-font-size);
+                    line-height  : var(--page-title-line-height);
+                    color        : var(--page-title-color);
+                    margin-bottom: var(--form-title-margin-bottom);
+                    text-align   : center;
+                }
+
+                .form__content__forgotPass {
+                    text-align: right;
+                }
+
+                .form__content__submit {
+                    display        : flex;
+                    flex-direction : column;
+                    align-items    : center;
+                    justify-content: center;
+                    padding-top    : var(--form-submit-button-padding-top);
+                    padding-bottom : var(--subsections-padding-bottom);
+                }
+
+                .form__content__google {
+                    display        : flex;
+                    justify-content: center;
+                    padding-top    : var(--subsections-padding-bottom);
+                    padding-bottom : var(--subsections-padding-bottom);
+                }
+            }
+
+            .form__content__introspection {
+                font-family    : var(--basic-text-font);
+                font-size      : var(--basic-text-font-size);
+                line-height    : var(--basic-text-line-height);
+                color          : var(--basic-text-color);
+                display        : flex;
+                justify-content: center;
+
+                b {
+                    font-weight: bold;
+                }
+
+                a {
+                    font-size: var(--basic-text-link-font-size);
+                }
+            }
+        }
+    }
+}

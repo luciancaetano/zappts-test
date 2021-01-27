@@ -1,0 +1,24 @@
+.googleButton {
+    --google-button-background-color: #ffffff;
+    --google-button-height: 45px;
+    --google-button-border-radius: 45px;
+    --google-button-padding: 12px 30px;
+    --google-button-shadow: -2px 3px 5px #00000047;
+    --google-button-font-weight: bold;
+
+
+    border: none;
+
+    background-color: var(--google-button-background-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-self: center;
+    height: var(--google-button-height);
+    padding: var(--google-button-padding);
+    border-radius: var(--google-button-border-radius);
+    box-shadow: var(--google-button-shadow);
+    font-weight: var(--google-button-font-weight);
+    outline: none;
+    cursor: pointer;
+}

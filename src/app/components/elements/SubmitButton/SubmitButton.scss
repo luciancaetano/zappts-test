@@ -1,0 +1,33 @@
+
+.submitButton{
+
+    --button-background-color: #707070;
+    --button-background-color-hover: #888888;
+    --button-background-color-active: #696969;
+    --button-text-color: #ffffff;
+    --button-border-radius: 24px;
+    --button-height: 45px;
+    --button-min-width: 175px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
+    border-radius: var(--button-border-radius);
+    height: var(--button-height);
+    min-width: var(--button-min-width);
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover{
+        background-color: var(--button-background-color-hover);
+    }
+
+    &:active{
+        background-color: var(--button-background-color-active);
+    }
+}
