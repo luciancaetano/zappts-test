@@ -1,6 +1,7 @@
 import React, {
   FormEvent, useCallback, useEffect, useState,
 } from 'react';
+import { Link } from 'react-router-dom';
 import { emailIsValid } from '../../../utils/validators';
 import {
   Logo, InputText, SubmitButton, Divider, GoogleButton, BasicSlider,
@@ -91,7 +92,7 @@ const SignIn = () => {
           </div>
 
           <div className="form__content__introspection">
-            New&nbsp;<b>Invision</b>? <a href="/sign-up" className="green">Create Account</a>
+            New&nbsp;<b>Invision</b>? <Link to="/sign-up" className="green">Create Account</Link>
           </div>
 
         </form>
