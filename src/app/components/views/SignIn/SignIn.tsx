@@ -31,8 +31,10 @@ const SignIn = () => {
       password: false,
     };
 
-    if (!emailIsValid(email)) {
-      validation.email = 'Email inválido';
+    if (email.trim().length === 0) {
+      validation.email = 'Este campo não pode ser vazio';
+    } else if (!emailIsValid(email)) {
+      validation.email = 'O e-mail está incorreto';
     } else {
       validation.email = false;
     }
