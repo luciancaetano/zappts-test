@@ -2,16 +2,22 @@ import React, {
   FormEvent, useCallback, useEffect, useState,
 } from 'react';
 import { Link } from 'react-router-dom';
+import { emailIsValid } from '../../../utils/validators';
 import {
   Logo, InputText, SubmitButton, Divider, GoogleButton, BasicSlider,
 } from '../../elements';
 import AppLayout from '../../partials/AppLayout/AppLayout';
 import './SignIn.scss';
 
+interface IFormValidation {
+  email: boolean | string;
+  password: boolean | string;
+}
+
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<IFormValidation>({
     email: false,
     password: false,
   });
@@ -20,19 +26,19 @@ const SignIn = () => {
   useEffect(() => {
     if (!submited) return;
 
-    const validation = {
+    const validation: IFormValidation = {
       email: false,
       password: false,
     };
 
-    if (email.trim().length === 0) {
-      validation.email = true;
+    if (!emailIsValid(email)) {
+      validation.email = 'Email inválido';
     } else {
       validation.email = false;
     }
 
-    if (password.trim().length === 0) {
-      validation.password = true;
+    if (password.trim().length < 6) {
+      validation.password = 'A senha não pode ter menos de 6 caracteres';
     } else {
       validation.password = false;
     }
@@ -55,8 +61,19 @@ const SignIn = () => {
         </div>
         <form className="form__content" onSubmit={handleSubmit}>
           <h1>Welcome to Invision</h1>
-          <InputText value={email} onChange={setEmail} label="Users name or Email" error={errors.email} />
-          <InputText inputType="password" value={password} onChange={setPassword} label="Password" error={errors.password} />
+          <InputText
+            value={email}
+            onChange={setEmail}
+            label="Users name or Email"
+            error={errors.email}
+          />
+          <InputText
+            inputType="password"
+            value={password}
+            onChange={setPassword}
+            label="Password"
+            error={errors.password}
+          />
 
           <div className="form__content__forgotPass">
             <a href="javascript:;">Forgot password?</a>

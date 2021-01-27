@@ -7,7 +7,7 @@ interface IProps {
   onChange: (text: string) => void;
   value: string;
   label: string;
-  error?: boolean;
+  error?: string | boolean;
 }
 
 const InputText = ({
@@ -21,6 +21,7 @@ const InputText = ({
     <div className={classnames('inputText', { error })}>
       <label>{label}</label>
       <input type={inputType} onChange={handleChange} value={value} />
+      {error && <span className="errorFeedback">{error}</span>}
     </div>
   );
 };

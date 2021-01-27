@@ -8,6 +8,7 @@
     --input-padding: 11px 20px;
     --input-border: 2px solid #00000029;
     --input-border-error: 2px solid #ff0000;
+    --input-font-size-error: 12px;
 
     --label-font-weight: normal;
     --label-font-size: 14px;
@@ -49,6 +50,11 @@
         }
         input {
             border-bottom: var(--input-border-error);
+        }
+
+        .errorFeedback {
+            font-size: var(--input-font-size-error);
+            color: var(--label-color-error);
         }
     }
 
